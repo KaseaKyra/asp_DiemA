@@ -1,0 +1,8 @@
+﻿.wrap-content {
+    border: 1px solid gray;
+    box-shadow: 1px 1px 2px gray;
+}
+
+.error {
+    color: #ff0000;
+}
