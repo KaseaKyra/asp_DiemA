@@ -27,7 +27,7 @@ namespace HocTN_TuVanDH.Form
                     sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
                     lblSumRecord.Text = ((int)sqlCommand.ExecuteScalar()).ToString();
 
-                    sqlSum = "Pro_DemSoBaiHoc";
+                    sqlSum = "Pro_GetListTypeHv";
                     sqlCommand = new SqlCommand(sqlSum, clsCon.con);
                     sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
                     SqlDataReader re = sqlCommand.ExecuteReader();
@@ -43,13 +43,14 @@ namespace HocTN_TuVanDH.Form
                             + re.GetValue(0).ToString()
                             + "</td><td>"
                             + re.GetValue(1).ToString()
-                            + "</td><td>"
-                            + re.GetValue(2).ToString()
-                            + "</td><td>"
-                            + re.GetValue(3).ToString()
-                            + "</td><td>"
-                            + re.GetValue(4).ToString()
-                            + "</td></tr>";
+                             + "</td><td class=\"text-center text-success\"><a href=\"SuaLoai.aspx?ml="
+                            + re.GetValue(0).ToString()
+                            + "&type=udt"
+                            + " \"><i class=\"fas fa-edit\"></i></a></td>"
+                            + "</td><td class=\"text-center text-danger\"><a href=\"XoaLoai.aspx?ml="
+                            + re.GetValue(0).ToString()
+                            + "&type=del"
+                            + " \"><i class=\"fas fa-trash - alt\"></i></a></td></tr>";
                     }
                     re.Close();
                     ltrLoaiNd.Text = st_kq;

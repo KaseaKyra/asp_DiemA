@@ -90,7 +90,9 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\icomoon.svg" />
     <Content Include="Form\LoaiNd\DS_LoaiNd.aspx" />
+    <Content Include="Form\LoaiNd\SuaLoai.aspx" />
     <Content Include="Form\LoaiNd\ThemLoaiNd.aspx" />
+    <Content Include="Form\LoaiNd\XoaLoai.aspx" />
     <Content Include="img\bg-img\bg-1.jpg" />
     <Content Include="img\bg-img\bg-2.jpg" />
     <Content Include="img\bg-img\bg-3.jpg" />
@@ -212,12 +214,26 @@
     <Compile Include="Form\LoaiNd\DS_LoaiNd.aspx.designer.cs">
       <DependentUpon>DS_LoaiNd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Form\LoaiNd\SuaLoai.aspx.cs">
+      <DependentUpon>SuaLoai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\LoaiNd\SuaLoai.aspx.designer.cs">
+      <DependentUpon>SuaLoai.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Form\LoaiNd\ThemLoaiNd.aspx.cs">
       <DependentUpon>ThemLoaiNd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Form\LoaiNd\ThemLoaiNd.aspx.designer.cs">
       <DependentUpon>ThemLoaiNd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LoaiNd\XoaLoai.aspx.cs">
+      <DependentUpon>XoaLoai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\LoaiNd\XoaLoai.aspx.designer.cs">
+      <DependentUpon>XoaLoai.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

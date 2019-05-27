@@ -3,11 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h4 class="mb-5">DANH SÁCH PHÂN LOẠI NGƯỜI DÙNG</h4>
+    <h4 class="mb-3">DANH SÁCH PHÂN LOẠI NGƯỜI DÙNG</h4>
     <div class="row">
-        <div class="col-12">
-            Tổng số bản ghi: 
-            <asp:Label ID="lblSumRecord" runat="server" Text="0"></asp:Label>
+        <div class="col-12 clearfix">
+            <div class="text-danger float-right mb-3">
+                Tổng số bản ghi: 
+                <asp:Label ID="lblSumRecord" runat="server" Text="0"></asp:Label>
+            </div>
             <table class="table table-hover table-bordered table-striped">
                 <thead class="thead-dark text-center">
                     <tr>

@@ -37,7 +37,7 @@
                             <asp:CheckBox ID="CheckBox1" runat="server" Text="Đinh Thị Hải Yến" CssClass="form-check-input" />
                         </div>
                         <div class="text-center">
-                            <asp:Button ID="btnSearchCity" runat="server" Text="Tìm Kiếm" CssClass="btn btn-primary" />
+                            <asp:Button ID="btnSearchCity" runat="server" Text="Tìm Kiếm" CssClass="btn btn-primary" OnClick="btnSearchCity_Click" />
                         </div>
                     </div>
                 </div>
