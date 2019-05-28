@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPageChild2.master" AutoEventWireup="true" CodeBehind="CoursesMasterPage.master.cs" Inherits="HocTN_TuVanDH.CoursesMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cphTitle" runat="server">
+    Khóa học
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphPage" runat="server">
+    Khóa học
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphContent" runat="server">
+    <!-- ##### Top Popular Courses Area Start ##### -->
+    <div class="top-popular-courses-area mt-50 section-padding-100-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="border border-success p-1 mb-5">
+                        <div class="bg-success py-3 rounded text-center text-uppercase font-weight-bold c-color">tên khóa học</div>
+                        <div class="form-group text-center">
+                            <asp:TextBox ID="txbCourseName" CssClass="form-control mt-2" runat="server" placeholder="Nhập tên khóa học"></asp:TextBox>
+                            <asp:Button ID="btnSearch" CssClass="btn btn-primary mt-2" runat="server" Text="Tìm kiếm" OnClick="btnSearch_Click" />
+                        </div>
+                    </div>
+                    <div class="border border-success p-1">
+                        <div class="bg-success py-3 rounded text-center text-uppercase font-weight-bold mb-2 c-color">Trình độ</div>
+                        <div>
+                            <asp:Button ID="btnN3" runat="server" CssClass="btn btn-danger form-control" Text="Khóa học N3" />
+                        </div>
+                        <div>
+                            <asp:Button ID="btnN4" runat="server" CssClass="btn btn-warning form-control" Text="Khóa học N4" />
+                        </div>
+                        <div>
+                            <asp:Button ID="bntN5" runat="server" CssClass="btn btn-primary form-control" Text="Khóa học N5" />
+                        </div>
+                    </div>
+                    <div class="border border-success p-1 mt-5">
+                        <div class="bg-success py-3 rounded text-center text-uppercase font-weight-bold c-color">Giáo viên</div>
+                        <div class="form-group">
+                            <asp:DropDownList ID="ddlGiaoVien" CssClass="form-control mt-2" runat="server"></asp:DropDownList>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <asp:ContentPlaceHolder ID="cphCourseContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Top Popular Courses Area End ##### -->
+</asp:Content>

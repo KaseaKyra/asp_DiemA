@@ -13,8 +13,8 @@ namespace HocTN_TuVanDH
 {
     public partial class SignIn : System.Web.UI.Page
     {
-        Connection connection = new Connection();
-        SqlCommand cmd;
+        Connection clsCon = new Connection();
+        SqlCommand sqlCommand;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,39 +53,43 @@ namespace HocTN_TuVanDH
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-            string name = txbName.Text;
-            string email = txbEmail.Text;
-            string phone = txbPassword.Text;
-            string pass = MD5Hash(txbPassword.Text);
-            int gender = 1;
-            int type = 1;
-            string note = "";
-            string month = ddlMonth.SelectedItem.Value;
-            string day = ddlDay.SelectedItem.Value;
-            string year = ddlYear.SelectedItem.Value;
-            string dob = month + "-" + day + "-" + year;
-
-            if (rbFemale.Checked)
-            {
-                gender = 2;
-            }
-
             try
             {
-                connection.openDB();
+                clsCon.openDB();
+
+                string name = txbName.Text;
+                string email = txbEmail.Text;
+                string phone = txbPhone.Text;
+                string pass = MD5Hash(txbPassword.Text);
+                int gender = 1;
+                int type = 1;
+                string note = "người dùng";
+                string month = ddlMonth.SelectedItem.Value;
+                string day = ddlDay.SelectedItem.Value;
+                string year = ddlYear.SelectedItem.Value;
+                string dob = month + "-" + day + "-" + year;
+
+                if (rbFemale.Checked)
+                {
+                    gender = 2;
+                }
+
                 string query = "Proc_InsertNguoiDung";
-                cmd = new SqlCommand(query, connection.con);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@name", name));
-                cmd.Parameters.Add(new SqlParameter("@dob", dob));
-                cmd.Parameters.Add(new SqlParameter("@gender", gender));
-                cmd.Parameters.Add(new SqlParameter("@phone", phone));
-                cmd.Parameters.Add(new SqlParameter("@email", email));
-                cmd.Parameters.Add(new SqlParameter("@pass", pass));
-                cmd.Parameters.Add(new SqlParameter("@type", type));
-                cmd.Parameters.Add(new SqlParameter("@note", note));
-                cmd.ExecuteNonQuery();
-                
+                sqlCommand = new SqlCommand(query, clsCon.con);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                sqlCommand.Parameters.Add(new SqlParameter("@name", name));
+                sqlCommand.Parameters.Add(new SqlParameter("@dob", dob));
+                sqlCommand.Parameters.Add(new SqlParameter("@gender", gender));
+                sqlCommand.Parameters.Add(new SqlParameter("@phone", phone));
+                sqlCommand.Parameters.Add(new SqlParameter("@email", email));
+                sqlCommand.Parameters.Add(new SqlParameter("@pass", pass));
+                sqlCommand.Parameters.Add(new SqlParameter("@type", type));
+                sqlCommand.Parameters.Add(new SqlParameter("@note", note));
+
+                sqlCommand.ExecuteNonQuery();
+
+                Response.Redirect("Courses.aspx");
             }
             catch (Exception ex)
             {
@@ -93,9 +97,8 @@ namespace HocTN_TuVanDH
             }
             finally
             {
-                connection.closeDB();
+                clsCon.closeDB();
             }
-
         }
     }
 }

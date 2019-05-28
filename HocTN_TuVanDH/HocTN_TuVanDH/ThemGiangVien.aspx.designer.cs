@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HocTN_TuVanDH.Form.LoaiNd
+namespace HocTN_TuVanDH
 {
 
 
-    public partial class SuaLoai
+    public partial class ThemGiangVien
     {
     }
 }

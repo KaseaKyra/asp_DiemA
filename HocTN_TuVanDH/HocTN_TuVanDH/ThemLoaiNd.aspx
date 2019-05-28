@@ -9,7 +9,7 @@
             <div class="form-group">
                 <asp:TextBox ID="txbLoaiNd" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
-            <asp:Button ID="btnThem" runat="server" Text="Thêm" CssClass="btn btn-primary float-right" />
+            <asp:Button ID="btnThem" runat="server" Text="Thêm" CssClass="btn btn-primary float-right" OnClick="btnThem_Click" />
         </div>
     </div>
 </asp:Content>

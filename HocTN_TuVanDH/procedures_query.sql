@@ -1,0 +1,67 @@
+﻿USE DiemA
+GO
+
+CREATE PROCEDURE Pro_DemSoNguoiDung
+AS
+BEGIN
+SELECT COUNT(Id) AS N'Tống người dùng' FROM NguoiDung
+END
+GO
+
+CREATE PROCEDURE Pro_DemSoGiangVien
+AS
+BEGIN
+SELECT COUNT(Id) AS N'Tống giảng viên' FROM GiangVien
+END
+GO
+
+CREATE PROCEDURE Pro_DemSoKhoaHoc
+AS
+BEGIN
+SELECT COUNT(Id) AS N'Tống khóa học' FROM KhoaHoc
+END
+GO
+
+CREATE PROCEDURE Pro_DemSoBaiHoc
+AS
+BEGIN
+SELECT COUNT(Id) AS N'Tống bài học' FROM BaiHoc
+END
+GO
+
+CREATE PROCEDURE Pro_CountTypeHv
+AS
+BEGIN
+SELECT COUNT(Id) FROM TypeHv
+END
+GO
+
+CREATE PROCEDURE Pro_GetListTypeHv
+AS
+BEGIN
+SELECT * FROM TypeHv
+END
+GO
+
+CREATE PROCEDURE Proc_GetTypeHvById
+@Id INT
+AS
+BEGIN
+SELECT Name FROM TypeHv WHERE Id = @Id
+END
+GO
+
+-- EXEC Proc_GetTypeHvById 1
+-- GO SELECT * FROM GiangVien
+
+CREATE PROCEDURE Proc_GetNguoiDungWhenLogin
+@Email VARCHAR(255)
+AS
+BEGIN
+SELECT * FROM GiangVien 
+WHERE Email = @Email OR Password = @Email
+END
+GO
+
+--EXEC Proc_GetNguoiDungWhenLogin "yen@gmail.com"
+--GO

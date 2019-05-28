@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="AllCourses.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Courses.aspx" />
@@ -85,14 +86,17 @@
     <Content Include="CustomCSS\login.css" />
     <Content Include="CustomImages\login.png" />
     <Content Include="CustomJs\AdminMasterPage.js" />
+    <Content Include="DS_GiangVien.aspx" />
     <Content Include="DuHoc.aspx" />
     <Content Include="fonts\classy.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\icomoon.svg" />
-    <Content Include="Form\LoaiNd\DS_LoaiNd.aspx" />
-    <Content Include="Form\LoaiNd\SuaLoai.aspx" />
-    <Content Include="Form\LoaiNd\ThemLoaiNd.aspx" />
-    <Content Include="Form\LoaiNd\XoaLoai.aspx" />
+    <Content Include="DS_LoaiNd.aspx" />
+    <Content Include="SuaLoai.aspx" />
+    <Content Include="ThemLoaiNd.aspx" />
+    <Content Include="XoaLoai.aspx" />
+    <Content Include="DS_NguoiDung.aspx" />
+    <Content Include="ThemNguoiDung.aspx" />
     <Content Include="img\bg-img\bg-1.jpg" />
     <Content Include="img\bg-img\bg-2.jpg" />
     <Content Include="img\bg-img\bg-3.jpg" />
@@ -144,6 +148,7 @@
     <Content Include="Login.aspx" />
     <Content Include="SignIn.aspx" />
     <Content Include="style.css" />
+    <Content Include="ThemGiangVien.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -171,7 +176,13 @@
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="AllClass\Connection.cs" />
-    <Compile Include="AllClass\DTO\NguoiDung.cs" />
+    <Compile Include="AllCourses.aspx.cs">
+      <DependentUpon>AllCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllCourses.aspx.designer.cs">
+      <DependentUpon>AllCourses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Blog.aspx.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +204,20 @@
     <Compile Include="Courses.aspx.designer.cs">
       <DependentUpon>Courses.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CoursesMasterPage.master.cs">
+      <DependentUpon>CoursesMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoursesMasterPage.master.designer.cs">
+      <DependentUpon>CoursesMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GiangVien.aspx.cs">
+      <DependentUpon>DS_GiangVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DS_GiangVien.aspx.designer.cs">
+      <DependentUpon>DS_GiangVien.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DuHoc.aspx.cs">
       <DependentUpon>DuHoc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,33 +232,47 @@
     <Compile Include="FatherMasterPage.Master.designer.cs">
       <DependentUpon>FatherMasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoaiNd\DS_LoaiNd.aspx.cs">
+    <Compile Include="DS_LoaiNd.aspx.cs">
       <DependentUpon>DS_LoaiNd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Form\LoaiNd\DS_LoaiNd.aspx.designer.cs">
+    <Compile Include="DS_LoaiNd.aspx.designer.cs">
       <DependentUpon>DS_LoaiNd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoaiNd\SuaLoai.aspx.cs">
+    <Compile Include="SuaLoai.aspx.cs">
       <DependentUpon>SuaLoai.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Form\LoaiNd\SuaLoai.aspx.designer.cs">
+    <Compile Include="SuaLoai.aspx.designer.cs">
       <DependentUpon>SuaLoai.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoaiNd\ThemLoaiNd.aspx.cs">
+    <Compile Include="ThemLoaiNd.aspx.cs">
       <DependentUpon>ThemLoaiNd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Form\LoaiNd\ThemLoaiNd.aspx.designer.cs">
+    <Compile Include="ThemLoaiNd.aspx.designer.cs">
       <DependentUpon>ThemLoaiNd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoaiNd\XoaLoai.aspx.cs">
+    <Compile Include="XoaLoai.aspx.cs">
       <DependentUpon>XoaLoai.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Form\LoaiNd\XoaLoai.aspx.designer.cs">
+    <Compile Include="XoaLoai.aspx.designer.cs">
       <DependentUpon>XoaLoai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DS_NguoiDung.aspx.cs">
+      <DependentUpon>DS_NguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DS_NguoiDung.aspx.designer.cs">
+      <DependentUpon>DS_NguoiDung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThemNguoiDung.aspx.cs">
+      <DependentUpon>ThemNguoiDung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemNguoiDung.aspx.designer.cs">
+      <DependentUpon>ThemNguoiDung.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -271,6 +310,13 @@
     <Compile Include="SignIn.aspx.designer.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ThemGiangVien.aspx.cs">
+      <DependentUpon>ThemGiangVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemGiangVien.aspx.designer.cs">
+      <DependentUpon>ThemGiangVien.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="FatherMasterPage.Master" />
@@ -288,6 +334,7 @@
     <Content Include="fonts\icomoon.woff" />
     <Content Include="MasterPageChild2.master" />
     <Content Include="AdminMasterPage.Master" />
+    <Content Include="CoursesMasterPage.master" />
     <None Include="packages.config" />
     <Content Include="scss\style.scss" />
     <Content Include="scss\_mixin.scss" />

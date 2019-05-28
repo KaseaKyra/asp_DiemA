@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CoursesMasterPage.master" AutoEventWireup="true" CodeBehind="Courses.aspx.cs" Inherits="HocTN_TuVanDH.Courses" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CoursesMasterPage.master" AutoEventWireup="true" CodeBehind="AllCourses.aspx.cs" Inherits="HocTN_TuVanDH.AllCourses" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphCourseContent" runat="server">
     <div class="row">

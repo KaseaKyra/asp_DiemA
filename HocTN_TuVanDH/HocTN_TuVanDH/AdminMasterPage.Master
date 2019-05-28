@@ -27,27 +27,16 @@
                 <ul class="list-unstyled components">
                     <p>Dummy Heading</p>
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
+                        <a href="Admin.aspx">Trang chủ</a>
                     </li>
                     <li>
                         <a href="#nguoi-dung" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Người dùng</a>
                         <ul class="collapse list-unstyled" id="nguoi-dung">
                             <li>
-                                <a href="#">Danh sách</a>
+                                <a href="DS_NguoiDung.aspx">Danh sách</a>
                             </li>
                             <li>
-                                <a href="#">Thêm</a>
+                                <a href="ThemNguoiDung.aspx">Thêm</a>
                             </li>
                         </ul>
                     </li>
@@ -55,10 +44,10 @@
                         <a href="#giang-vien" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Giảng viên</a>
                         <ul class="collapse list-unstyled" id="giang-vien">
                             <li>
-                                <a href="#">Danh sách</a>
+                                <a href="DS_GiangVien.aspx">Danh sách</a>
                             </li>
                             <li>
-                                <a href="#">Thêm</a>
+                                <a href="ThemGiangVien.aspx">Thêm</a>
                             </li>
                         </ul>
                     </li>
@@ -66,10 +55,10 @@
                         <a href="#loai-nguoi-dung" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Loại người dùng</a>
                         <ul class="collapse list-unstyled" id="loai-nguoi-dung">
                             <li>
-                                <a href="Form/LoaiNd/DS_LoaiNd.aspx">Danh sách</a>
+                                <a href="DS_LoaiNd.aspx">Danh sách</a>
                             </li>
                             <li>
-                                <a href="Form/LoaiNd/ThemLoaiNd.aspx">Thêm</a>
+                                <a href="ThemLoaiNd.aspx">Thêm</a>
                             </li>
                         </ul>
                     </li>
