@@ -54,6 +54,7 @@
                         <asp:Button ID="btnLogin" runat="server" Text="Đăng Nhập Hệ Thống"
                             CssClass="form-control btn btn-primary" OnClick="btnLogin_Click" />
                     </div>
+                    <asp:Label ID="Label1" runat="server" Text="Label" CssClass="text-danger"></asp:Label>
                     <%--nút hủy--%>
                     <div class="clearfix">
                         <div class="float-left">

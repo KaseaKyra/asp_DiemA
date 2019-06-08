@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,35 +21,52 @@ namespace HocTN_TuVanDH
 
         }
 
+        // mã hóa mật khẩu
+        private static string MD5Hash(string input)
+        {
+            StringBuilder hash = new StringBuilder();
+            MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
+            byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
+
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                hash.Append(bytes[i].ToString("x2"));
+            }
+            return hash.ToString();
+        }
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                try
-                {
-                    clsCon.openDB();
+                clsCon.openDB();
 
-                    string email = txbUsername.Text;
-                    string pass = txbPassword.Text;
+                string email = txbUsername.Text;
+                string pass = MD5Hash(txbPassword.Text);
 
-                    string query = "Proc_GetNguoiDungWhenLogin";
-                    sqlCommand = new SqlCommand(query, clsCon.con);
-                    sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                string query = "Proc_GetNguoiDungWhenLogin";
+                sqlCommand = new SqlCommand(query, clsCon.con);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    sqlCommand.Parameters.Add(new SqlParameter("@email", email));
+                sqlCommand.Parameters.Add(new SqlParameter("@Email", email));
+                sqlCommand.Parameters.Add(new SqlParameter("@Password", pass));
 
-                    sqlCommand.ExecuteReader();
+                int sl = int.Parse(sqlCommand.ExecuteScalar().ToString());
+                Label1.Text = sl.ToString();
+                //if (sl != 0)
+                //{
+                //Response.Redirect("Admin.aspx");
+                //Response.Redirect("http://www.microsoft.com");
 
-                    Response.Redirect("Courses.aspx");
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("Lối: " + ex);
-                }
-                finally
-                {
-                    clsCon.closeDB();
-                }
+                //}
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Lối: " + ex);
+            }
+            finally
+            {
+                clsCon.closeDB();
             }
         }
     }

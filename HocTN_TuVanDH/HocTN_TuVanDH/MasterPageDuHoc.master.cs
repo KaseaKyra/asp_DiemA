@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace HocTN_TuVanDH
 {
-    public partial class DuHoc : System.Web.UI.Page
+    public partial class MasterPageDuHoc : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void lvwSchool_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnSearchCity_Click(object sender, EventArgs e)
         {
 
         }

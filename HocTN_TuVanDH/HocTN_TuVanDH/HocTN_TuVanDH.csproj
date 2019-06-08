@@ -71,6 +71,7 @@
     <Content Include="Admin.aspx" />
     <Content Include="AllCourses.aspx" />
     <Content Include="Blog.aspx" />
+    <Content Include="ChiTietTruongHoc.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Courses.aspx" />
     <Content Include="css\animate.css" />
@@ -85,6 +86,7 @@
     <Content Include="CustomCSS\index.css" />
     <Content Include="CustomCSS\login.css" />
     <Content Include="CustomImages\login.png" />
+    <Content Include="CustomImages\Schools\login.png" />
     <Content Include="CustomJs\AdminMasterPage.js" />
     <Content Include="DS_GiangVien.aspx" />
     <Content Include="DuHoc.aspx" />
@@ -190,6 +192,13 @@
     <Compile Include="Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietTruongHoc.aspx.cs">
+      <DependentUpon>ChiTietTruongHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietTruongHoc.aspx.designer.cs">
+      <DependentUpon>ChiTietTruongHoc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +247,13 @@
     </Compile>
     <Compile Include="DS_LoaiNd.aspx.designer.cs">
       <DependentUpon>DS_LoaiNd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageDuHoc.master.cs">
+      <DependentUpon>MasterPageDuHoc.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageDuHoc.master.designer.cs">
+      <DependentUpon>MasterPageDuHoc.master</DependentUpon>
     </Compile>
     <Compile Include="SuaLoai.aspx.cs">
       <DependentUpon>SuaLoai.aspx</DependentUpon>
@@ -335,6 +351,7 @@
     <Content Include="MasterPageChild2.master" />
     <Content Include="AdminMasterPage.Master" />
     <Content Include="CoursesMasterPage.master" />
+    <Content Include="MasterPageDuHoc.master" />
     <None Include="packages.config" />
     <Content Include="scss\style.scss" />
     <Content Include="scss\_mixin.scss" />
