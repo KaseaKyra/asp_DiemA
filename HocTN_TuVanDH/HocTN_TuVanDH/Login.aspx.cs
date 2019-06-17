@@ -45,6 +45,7 @@ namespace HocTN_TuVanDH
                 string pass = MD5Hash(txbPassword.Text);
 
                 string query = "Proc_GetNguoiDungWhenLogin";
+
                 sqlCommand = new SqlCommand(query, clsCon.con);
                 sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -52,13 +53,16 @@ namespace HocTN_TuVanDH
                 sqlCommand.Parameters.Add(new SqlParameter("@Password", pass));
 
                 int sl = int.Parse(sqlCommand.ExecuteScalar().ToString());
-                Label1.Text = sl.ToString();
-                //if (sl != 0)
-                //{
-                //Response.Redirect("Admin.aspx");
-                //Response.Redirect("http://www.microsoft.com");
 
-                //}
+                if (sl != 0)
+                {
+                    Session["user"] = email;
+                    Response.Redirect("QuanLyTaiKhoan.aspx");
+                }
+                else
+                {
+
+                }
             }
             catch (Exception ex)
             {

@@ -11,12 +11,15 @@ namespace HocTN_TuVanDH
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+            }
         }
 
-        protected void btnSearchCity_Click(object sender, EventArgs e)
+        protected void btnSearchSchool_Click(object sender, EventArgs e)
         {
-
+            string name = txbSchoolName.Text;
+            Response.Redirect("TimKiemTruongHoc.aspx?name=" + name);
         }
     }
 }

@@ -40,13 +40,13 @@ namespace HocTN_TuVanDH {
         protected global::System.Web.UI.WebControls.Label lblAddress;
         
         /// <summary>
-        /// lblWebsite control.
+        /// hlkWebsite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWebsite;
+        protected global::System.Web.UI.WebControls.HyperLink hlkWebsite;
         
         /// <summary>
         /// lblNganh control.

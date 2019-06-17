@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/FatherMasterPage.Master" AutoEventWireup="true" CodeBehind="MasterPageTaiKhoan.master.cs" Inherits="HocTN_TuVanDH.MasterPageTaiKhoan" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphFatherMP" runat="server">
+    <div class="top-popular-courses-area section-padding-100-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Quản lý tài khoản <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Danh sách khóa học</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <asp:ContentPlaceHolder ID="cphQuanLyTaiKhoan" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>

@@ -56,7 +56,7 @@
                         <div class="ml-2 course-content">
                             <h4 class="mb-3">KHÓA HỌC N5</h4>
                             <p>Khởi đầu cùng khóa học N5</p>
-                            <asp:Button ID="btnN5" runat="server" Text="Chi tiết" CssClass="btn btn-success px-5" />
+                            <asp:Button ID="btnN5" runat="server" Text="Chi tiết" CssClass="btn btn-success px-5" PostBackUrl="KhoaHocTheoCap.aspx?cap=1"  />
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <div class="ml-2 course-content">
                             <h4 class="mb-3">KHÓA HỌC N4</h4>
                             <p>Nâng cao cùng khóa học N4</p>
-                            <asp:Button ID="btnN4" runat="server" Text="Chi tiết" CssClass="btn btn-success px-5" />
+                            <asp:Button ID="btnN4" runat="server" Text="Chi tiết" CssClass="btn btn-success px-5" PostBackUrl="KhoaHocTheoCap.aspx?cap=2" />
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         <div class="ml-2 course-content">
                             <h4>KHÓA HỌC N5</h4>
                             <p class="mb-3">Bứt phá cùng khóa học N3</p>
-                            <asp:Button ID="btnN3" runat="server" Text="Chi tiết" CssClass="btn btn-success px-5" />
+                            <asp:Button ID="btnN3" runat="server" Text="Chi tiết" CssClass="btn btn-success px-5" PostBackUrl="KhoaHocTheoCap.aspx?cap=3"  />
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
     </div>
     <!-- ##### Course Area End ##### -->
     <!-- ##### Testimonials Area Start ##### -->
-    <div class="testimonials-area section-padding-100 bg-img bg-overlay" style="background-image: url(img/bg-img/bg-2.jpg);">
+    <div class="testimonials-area section-padding-100 bg-img bg-overlay my-3" style="background-image: url(img/bg-img/bg-2.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -164,118 +164,4 @@
         </div>
     </div>
     <!-- ##### Testimonials Area End ##### -->
-    <!-- ##### Top Popular Courses Area Start ##### -->
-    <div class="top-popular-courses-area section-padding-100-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
-                        <%--<span>The Best</span>--%>
-                        <h3>Các khóa học hot nhất hiện nay</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Single Top Popular Course -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="popular-course-content">
-                            <h5>Business for begginers</h5>
-                            <span>By Simon Smith   |  March 18, 2018</span>
-                            <div class="course-ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                            <a href="#" class="btn academy-btn btn-sm">See More</a>
-                        </div>
-                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-1.jpg);"></div>
-                    </div>
-                </div>
-                <!-- Single Top Popular Course -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="500ms">
-                        <div class="popular-course-content">
-                            <h5>Advanced HTML5</h5>
-                            <span>By Simon Smith   |  March 18, 2018</span>
-                            <div class="course-ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                            <a href="#" class="btn academy-btn btn-sm">See More</a>
-                        </div>
-                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-2.jpg);"></div>
-                    </div>
-                </div>
-                <!-- Single Top Popular Course -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="600ms">
-                        <div class="popular-course-content">
-                            <h5>Marketing 101</h5>
-                            <span>By Simon Smith   |  March 18, 2018</span>
-                            <div class="course-ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                            <a href="#" class="btn academy-btn btn-sm">See More</a>
-                        </div>
-                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-3.jpg);"></div>
-                    </div>
-                </div>
-                <!-- Single Top Popular Course -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-top-popular-course d-flex align-items-center flex-wrap mb-30 wow fadeInUp" data-wow-delay="700ms">
-                        <div class="popular-course-content">
-                            <h5>Business for begginers</h5>
-                            <span>By Simon Smith   |  March 18, 2018</span>
-                            <div class="course-ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod.</p>
-                            <a href="#" class="btn academy-btn btn-sm">See More</a>
-                        </div>
-                        <div class="popular-course-thumb bg-img" style="background-image: url(img/bg-img/pc-4.jpg);"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Top Popular Courses Area End ##### -->
-    <!-- ##### Partner Area Start ##### -->
-    <%--    <div class="partner-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
-                        <a href="#">
-                            <img src="img/clients-img/partner-1.png" alt=""></a>
-                        <a href="#">
-                            <img src="img/clients-img/partner-2.png" alt=""></a>
-                        <a href="#">
-                            <img src="img/clients-img/partner-3.png" alt=""></a>
-                        <a href="#">
-                            <img src="img/clients-img/partner-4.png" alt=""></a>
-                        <a href="#">
-                            <img src="img/clients-img/partner-5.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--%>
-    <!-- ##### Partner Area End ##### -->
 </asp:Content>

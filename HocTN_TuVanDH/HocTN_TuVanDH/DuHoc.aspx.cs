@@ -16,7 +16,7 @@ namespace HocTN_TuVanDH
 
         protected void lvwSchool_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

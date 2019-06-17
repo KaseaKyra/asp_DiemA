@@ -11,9 +11,6 @@ namespace HocTN_TuVanDH
 {
     public partial class CoursesMasterPage : System.Web.UI.MasterPage
     {
-        Connection clsCon = new Connection();
-        SqlCommand sqlCommand;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,28 +21,14 @@ namespace HocTN_TuVanDH
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            try
-            {
-                clsCon.openDB();
+            string name = txbCourseName.Text;
+            Response.Redirect("TimKiemKhoaHoc.aspx?name=" + name);
+        }
 
-                string courses = txbCourseName.Text;
-
-                string query = "Proc_InsertNguoiDung";
-                sqlCommand = new SqlCommand(query, clsCon.con);
-                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-
-                sqlCommand.Parameters.Add(new SqlParameter("@Name", courses));
-
-                sqlCommand.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Lối: " + ex);
-            }
-            finally
-            {
-                clsCon.closeDB();
-            }
+        protected void ddlGiaoVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(ddlGiaoVien.SelectedValue);
+           Response.Redirect("TkkhTheoGiangVien.aspx?id=" + id);
         }
     }
 }

@@ -11,5 +11,23 @@ namespace HocTN_TuVanDH {
     
     
     public partial class Courses {
+        
+        /// <summary>
+        /// lvwCourses control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvwCourses;
+        
+        /// <summary>
+        /// sqlDataSrcCourses control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlDataSrcCourses;
     }
 }

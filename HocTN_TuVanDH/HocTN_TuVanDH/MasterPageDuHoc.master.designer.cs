@@ -13,13 +13,13 @@ namespace HocTN_TuVanDH {
     public partial class MasterPageDuHoc {
         
         /// <summary>
-        /// txbCourseName control.
+        /// txbSchoolName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbCourseName;
+        protected global::System.Web.UI.WebControls.TextBox txbSchoolName;
         
         /// <summary>
         /// btnSearchSchool control.
@@ -29,42 +29,6 @@ namespace HocTN_TuVanDH {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearchSchool;
-        
-        /// <summary>
-        /// ddlGiaoVien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGiaoVien;
-        
-        /// <summary>
-        /// ddlPhanLoai control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPhanLoai;
-        
-        /// <summary>
-        /// CheckBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
-        
-        /// <summary>
-        /// btnSearchCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchCity;
         
         /// <summary>
         /// cphDSTruong control.

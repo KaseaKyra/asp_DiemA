@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="CustomCSS/index.css" rel="stylesheet" />
     <link href="CustomCSS/courses.css" rel="stylesheet" />
+    <link href="CustomCSS/ChiTietTruongHoc.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -33,12 +34,13 @@
                         <div class="col-12 h-100">
                             <div class="header-content h-100 d-flex align-items-center justify-content-between">
                                 <div class="academy-logo">
-                                    <a href="index.html">
+                                    <a href="Index.aspx">
                                         <img src="img/core-img/logo.png" alt="Academy"></a>
                                 </div>
                                 <div class="login-content">
+                                    <asp:Literal ID="ltrLogin" runat="server"></asp:Literal>
                                     <%--<a href="">Register / Login</a>--%>
-                                    <a href="Login.aspx">Đăng nhập</a>
+                                    <%--<a href="Login.aspx">Đăng nhập</a>--%>
                                     <%--<asp:HyperLink ID="hpkLogin" runat="server">Đăng nhập</asp:HyperLink>--%>
                                 </div>
                             </div>

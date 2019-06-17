@@ -71,6 +71,7 @@
     <Content Include="Admin.aspx" />
     <Content Include="AllCourses.aspx" />
     <Content Include="Blog.aspx" />
+    <Content Include="ChiTietKhoaHoc.aspx" />
     <Content Include="ChiTietTruongHoc.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Courses.aspx" />
@@ -82,20 +83,38 @@
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="CustomCSS\AdminMasterPage.css" />
+    <Content Include="CustomCSS\ChiTietTruongHoc.css" />
     <Content Include="CustomCSS\courses.css" />
     <Content Include="CustomCSS\index.css" />
     <Content Include="CustomCSS\login.css" />
+    <Content Include="CustomCSS\QuanLyTaiKhoan.css" />
+    <Content Include="CustomImages\Courses\login.png" />
+    <Content Include="CustomImages\Courses\pc-1.jpg" />
+    <Content Include="CustomImages\Courses\pc-2.jpg" />
+    <Content Include="CustomImages\Courses\pc-3.jpg" />
+    <Content Include="CustomImages\Courses\pc-4.jpg" />
     <Content Include="CustomImages\login.png" />
     <Content Include="CustomImages\Schools\login.png" />
     <Content Include="CustomJs\AdminMasterPage.js" />
+    <Content Include="CustomJs\QuanLyTaiKhoan.js" />
+    <Content Include="DanhSachBaiHoc.aspx" />
     <Content Include="DS_GiangVien.aspx" />
     <Content Include="DuHoc.aspx" />
     <Content Include="fonts\classy.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\icomoon.svg" />
     <Content Include="DS_LoaiNd.aspx" />
+    <Content Include="GioHang.aspx" />
+    <Content Include="KhoaHocTheoCap.aspx" />
+    <Content Include="QuanLyTaiKhoan.aspx" />
     <Content Include="SuaLoai.aspx" />
     <Content Include="ThemLoaiNd.aspx" />
+    <Content Include="TimKiemKhoaHoc.aspx" />
+    <Content Include="TimKiemTruongHoc.aspx" />
+    <Content Include="TkkhTheoGiangVien.aspx" />
+    <Content Include="TkThHocPhiIndex0.aspx" />
+    <Content Include="TruongHoc.aspx" />
+    <Content Include="VideoBaiHoc.aspx" />
     <Content Include="XoaLoai.aspx" />
     <Content Include="DS_NguoiDung.aspx" />
     <Content Include="ThemNguoiDung.aspx" />
@@ -178,6 +197,14 @@
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="AllClass\Connection.cs" />
+    <Compile Include="AllClass\Controller\BaiHocController.cs" />
+    <Compile Include="AllClass\Controller\CTKhoaHocController.cs" />
+    <Compile Include="AllClass\Controller\TruongController.cs" />
+    <Compile Include="AllClass\Controller\UserController.cs" />
+    <Compile Include="AllClass\Model\BaiHocModel.cs" />
+    <Compile Include="AllClass\Model\CTKhoaHocModel.cs" />
+    <Compile Include="AllClass\Model\TruongModel.cs" />
+    <Compile Include="AllClass\Model\UserModel.cs" />
     <Compile Include="AllCourses.aspx.cs">
       <DependentUpon>AllCourses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,6 +218,13 @@
     </Compile>
     <Compile Include="Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietKhoaHoc.aspx.cs">
+      <DependentUpon>ChiTietKhoaHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietKhoaHoc.aspx.designer.cs">
+      <DependentUpon>ChiTietKhoaHoc.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChiTietTruongHoc.aspx.cs">
       <DependentUpon>ChiTietTruongHoc.aspx</DependentUpon>
@@ -220,6 +254,13 @@
     <Compile Include="CoursesMasterPage.master.designer.cs">
       <DependentUpon>CoursesMasterPage.master</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachBaiHoc.aspx.cs">
+      <DependentUpon>DanhSachBaiHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachBaiHoc.aspx.designer.cs">
+      <DependentUpon>DanhSachBaiHoc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DS_GiangVien.aspx.cs">
       <DependentUpon>DS_GiangVien.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,12 +289,40 @@
     <Compile Include="DS_LoaiNd.aspx.designer.cs">
       <DependentUpon>DS_LoaiNd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GioHang.aspx.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioHang.aspx.designer.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KhoaHocTheoCap.aspx.cs">
+      <DependentUpon>KhoaHocTheoCap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KhoaHocTheoCap.aspx.designer.cs">
+      <DependentUpon>KhoaHocTheoCap.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPageDuHoc.master.cs">
       <DependentUpon>MasterPageDuHoc.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPageDuHoc.master.designer.cs">
       <DependentUpon>MasterPageDuHoc.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageTaiKhoan.master.cs">
+      <DependentUpon>MasterPageTaiKhoan.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageTaiKhoan.master.designer.cs">
+      <DependentUpon>MasterPageTaiKhoan.master</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyTaiKhoan.aspx.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLyTaiKhoan.aspx.designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="SuaLoai.aspx.cs">
       <DependentUpon>SuaLoai.aspx</DependentUpon>
@@ -268,6 +337,48 @@
     </Compile>
     <Compile Include="ThemLoaiNd.aspx.designer.cs">
       <DependentUpon>ThemLoaiNd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemKhoaHoc.aspx.cs">
+      <DependentUpon>TimKiemKhoaHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiemKhoaHoc.aspx.designer.cs">
+      <DependentUpon>TimKiemKhoaHoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemTruongHoc.aspx.cs">
+      <DependentUpon>TimKiemTruongHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiemTruongHoc.aspx.designer.cs">
+      <DependentUpon>TimKiemTruongHoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TkkhTheoGiangVien.aspx.cs">
+      <DependentUpon>TkkhTheoGiangVien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TkkhTheoGiangVien.aspx.designer.cs">
+      <DependentUpon>TkkhTheoGiangVien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TkThHocPhiIndex0.aspx.cs">
+      <DependentUpon>TkThHocPhiIndex0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TkThHocPhiIndex0.aspx.designer.cs">
+      <DependentUpon>TkThHocPhiIndex0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TruongHoc.aspx.cs">
+      <DependentUpon>TruongHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TruongHoc.aspx.designer.cs">
+      <DependentUpon>TruongHoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoBaiHoc.aspx.cs">
+      <DependentUpon>VideoBaiHoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoBaiHoc.aspx.designer.cs">
+      <DependentUpon>VideoBaiHoc.aspx</DependentUpon>
     </Compile>
     <Compile Include="XoaLoai.aspx.cs">
       <DependentUpon>XoaLoai.aspx</DependentUpon>
@@ -352,6 +463,7 @@
     <Content Include="AdminMasterPage.Master" />
     <Content Include="CoursesMasterPage.master" />
     <Content Include="MasterPageDuHoc.master" />
+    <Content Include="MasterPageTaiKhoan.master" />
     <None Include="packages.config" />
     <Content Include="scss\style.scss" />
     <Content Include="scss\_mixin.scss" />

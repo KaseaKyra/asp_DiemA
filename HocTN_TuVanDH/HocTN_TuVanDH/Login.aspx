@@ -27,13 +27,13 @@
                                 ErrorMessage="(*)"
                                 ControlToValidate="txbUsername"
                                 CssClass="error"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" 
-                                runat="server" ErrorMessage="Định dạng email không đúng" 
-                                ControlToValidate="txbUsername" 
-                                CssClass="error" 
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1"
+                                runat="server" ErrorMessage="Định dạng email không đúng"
+                                ControlToValidate="txbUsername"
+                                CssClass="error"
                                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                         </label>
-                        <asp:TextBox ID="txbUsername" runat="server" CssClass="form-control" 
+                        <asp:TextBox ID="txbUsername" runat="server" CssClass="form-control"
                             placeholder="Nhập email hoặc password"></asp:TextBox>
                     </div>
                     <%--mật khẩu--%>
@@ -54,7 +54,7 @@
                         <asp:Button ID="btnLogin" runat="server" Text="Đăng Nhập Hệ Thống"
                             CssClass="form-control btn btn-primary" OnClick="btnLogin_Click" />
                     </div>
-                    <asp:Label ID="Label1" runat="server" Text="Label" CssClass="text-danger"></asp:Label>
+                    <%--<asp:Label ID="Label1" runat="server" Text="Label" CssClass="text-danger"></asp:Label>--%>
                     <%--nút hủy--%>
                     <div class="clearfix">
                         <div class="float-left">
