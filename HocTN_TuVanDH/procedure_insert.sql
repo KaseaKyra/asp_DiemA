@@ -1,4 +1,4 @@
-﻿USE DiemA
+USE DiemA
 GO
 
 -- CHEN GIOI TINH
@@ -135,26 +135,27 @@ EXEC Proc_InsertNguoiDung N'Đinh Thị Cẩm Ly', "2000-08-03", 2, "0964440740"
 GO
 
 -- CHEN GiangVien
-CREATE PROCEDURE Proc_InsertGiangVien
-@name nvarchar(255),
-@dob DATE,
-@gender INT,
-@phone VARCHAR(11),
-@email VARCHAR(255),
-@pass VARCHAR(255),
-@type INT,
-@note nvarchar(255)
-as
-BEGIN
-	DECLARE @ID int = (SELECT ISNULL(MAX(Id), 0) From GiangVien) + 1
+CREATE PROCEDURE Proc_InsertGiangVien 
+@name nvarchar(255), 
+@dob DATE,  
+@gender INT, 
+@phone VARCHAR(11), 
+@email VARCHAR(255), 
+@pass VARCHAR(255), 
+@type INT, 
+@note nvarchar(255),  
+@GioiThieu NVARCHAR(255)  
+as 
+BEGIN 
+	DECLARE @ID int = (SELECT ISNULL(MAX(Id), 0) From GiangVien) + 1 
 -- 	PRINT @ID
 -- 
-	INSERT INTO GiangVien
-	VALUES(@ID, @name, @dob, @gender, @phone, @email, @pass, @type, @note)
-END
-GO
+	INSERT INTO GiangVien 
+	VALUES(@ID, @name, @dob, @gender, @phone, @email, @pass, @type, @note, @GioiThieu) 
+END 
+GO 
 
-EXEC Proc_InsertGiangVien N'Đinh Thị Hải Yến', "1998-04-14", 2, "0395582430", "yen@gmail.com", "c4ca4238a0b923820dcc509a6f75849b", 1, "giảng viên"
+EXEC Proc_InsertGiangVien N'Đinh Thị Hải Yến', "1998-04-14", 2, "0395582440", "yen2@gmail.com", "c4ca4238a0b923820dcc509a6f75849b", 1, "giảng viên", "giói thiệu" 
 GO
 -- 
 -- EXEC Proc_InsertNguoiDung N'Đinh Thị Cẩm Ly', "2000-08-03", 2, "0964440740", "ly2@gmail.com", "c4ca4238a0b923820dcc509a6f75849b", 1, "first user"
@@ -167,17 +168,19 @@ CREATE PROCEDURE Proc_InsertKhoaHoc
 @teacher INT,
 @HocPhi FLOAT,
 @NgayBatDau DATE,
-@note NVARCHAR(255)
+@note NVARCHAR(255), 
+@ImageLink NVARCHAR(255), 
+@GioiThieu NVARCHAR(255) 
 AS
 BEGIN
 	DECLARE @ID int = (SELECT ISNULL(MAX(Id), 0) From KhoaHoc) + 1
 	
 	INSERT INTO KhoaHoc
-	VALUES(@ID, @name, @level, @teacher, @HocPhi, @NgayBatDau, @note)
+	VALUES(@ID, @name, @level, @teacher, @HocPhi, @NgayBatDau, @note,  @ImageLink, @GioiThieu) 
 END
 GO
 
-EXEC Proc_InsertKhoaHoc N'Làm quen với tiếng Nhật', 1, 1, 0, "2019-01-01", N'miễn phí'
+EXEC Proc_InsertKhoaHoc N'Làm quen với tiếng Nhật', 1, 1, 0, "2019-01-01", N'miễn phí', "bg-1.png", "GIÓI THIỆU"
 GO
 
 -- BẢNG BÀI HỌC
@@ -185,15 +188,16 @@ CREATE PROCEDURE Proc_InsertBaiHoc
 @name NVARCHAR(255),
 @KhoaHocId INT,
 @Link VARCHAR(255),
-@GhiChu NVARCHAR(255)
-AS
-BEGIN
-	DECLARE @ID int = (SELECT ISNULL(MAX(Id), 0) From BaiHoc) + 1
+@GhiChu NVARCHAR(255) 
+AS 
+BEGIN 
+	DECLARE @ID int = (SELECT ISNULL(MAX(Id), 0) From BaiHoc) + 1 
+	DECLARE @ThuTuBaiHoc int = (SELECT ISNULL(MAX(ThuTuBaiHoc), 0) From BaiHoc) + 1 
 	
 	INSERT INTO BaiHoc
-	VALUES(@ID, @name, @KhoaHocId, @Link, @Ghichu)
-END
-GO
+	VALUES(@ID, @name, @KhoaHocId, @Link, @Ghichu, @ThuTuBaiHoc) 
+END 
+GO 
 
 EXEC Proc_InsertBaiHoc N'Giới thiệu về khóa học', 1, "e-ORhEE9VVg", N'Làm quen với tiếng Nhật'
 GO
@@ -203,19 +207,64 @@ CREATE PROCEDURE Proc_InsertTruongHoc
 @name NVARCHAR(255),
 @Address NVARCHAR(255),
 @Website NVARCHAR(255),
-@ThongTinChiTiet NVARCHAR(255),
-@ThongTinCoBan NVARCHAR(255),
+@ThongTinChiTiet NVARCHAR(4000),
+@ThongTinCoBan NVARCHAR(4000),
 @GiaTien FLOAT,
-@NganhDaoTao INT
+@NganhDaoTao INT,
+@ImageLink VARCHAR(255),
+@GhiChu NVARCHAR(255)
 AS
 BEGIN
 	DECLARE @ID int = (SELECT ISNULL(MAX(Id), 0) From Truong) + 1
 	
 	INSERT INTO Truong 
-	VALUES(@ID, @name, @Address, @Website, @ThongTinChiTiet, @ThongTinCoBan, @GiaTien, @NganhDaoTao)
+	VALUES(@ID, @name, @Address, @Website, @ThongTinChiTiet, @ThongTinCoBan, @GiaTien, @NganhDaoTao, @ImageLink, @GhiChu)
 END
 GO
 
-EXEC Proc_InsertTruongHoc N'Trường Nhật ngữ Kyosin', N'3-9-15, Kozojicho-kita, Kasugai city, Aichi 487-0016', N'https://www.kla.ac/', 
-N'Thông tin chi tiết', N'thông tin cơ bản', 7000000, 1
+EXEC Proc_InsertTruongHoc N'Trường Nhật ngữ Kyosin 1', N'3-9-15, Kozojicho-kita, Kasugai city, Aichi 487-0016', N'https://www.kla.ac/', 
+N'Thông tin chi tiết', N'thông tin cơ bản', 7000000, 1, "login.png", N'ghi chú'
 GO
+
+EXEC Proc_InsertTruongHoc N'Trường Nhật ngữ Kyosin 2', N'3-9-15, Kozojicho-kita, Kasugai city, Aichi 487-0016', N'https://www.kla.ac/', 
+N'Thông tin chi tiết', N'thông tin cơ bản', 7000000, 1, "login.png", N'ghi chú'
+GO
+
+EXEC Proc_InsertTruongHoc N'Trường Nhật ngữ Kyosin 3', N'3-9-15, Kozojicho-kita, Kasugai city, Aichi 487-0016', N'https://www.kla.ac/', 
+N'Thông tin chi tiết', N'thông tin cơ bản', 7000000, 1, "login.png", N'ghi chú'
+GO
+
+EXEC Proc_InsertTruongHoc N'Trường Nhật ngữ Kyosin 4', N'3-9-15, Kozojicho-kita, Kasugai city, Aichi 487-0016', N'https://www.kla.ac/', 
+N'Thông tin chi tiết', N'thông tin cơ bản', 7000000, 1, "login.png", N'ghi chú'
+GO
+
+EXEC Proc_InsertTruongHoc N'Trường Nhật ngữ Kyosin 5', N'3-9-15, Kozojicho-kita, Kasugai city, Aichi 487-0016', N'https://www.kla.ac/', 
+N'Thông tin chi tiết', N'thông tin cơ bản', 7000000, 1, "login.png", N'ghi chú'
+GO
+
+EXEC Proc_InsertTruongHoc N'Trường dạy làm vườn Busan', N'3-9-15, Kozojicho-kita, Kasugai city, Aichi 487-0016', N'https://www.kla.ac/', 
+N'Thông tin chi tiết', N'thông tin cơ bản', 7000000, 1, "login.png", N'ghi chú'
+GO
+
+-- BẢNG DU HỌC
+-- CREATE PROCEDURE Proc_InsertDuHoc
+-- @name NVARCHAR(255),
+-- @Truong INT,
+-- @PhanLoaiDh INT,
+-- @GhiChu NVARCHAR(255)
+-- AS
+-- BEGIN
+-- 	DECLARE @ID int = (SELECT ISNULL(MAX(Id), 0) From DuHoc) + 1
+-- 	
+-- 	INSERT INTO DuHoc
+-- 	VALUES(@ID, @name, @Truong, @PhanLoaiDh, @GhiChu)
+-- END
+-- GO
+-- 
+-- EXEC Proc_InsertDuHoc N'Trường Nhật ngữ Kyosin', 1, "e-ORhEE9VVg", N'Làm quen với tiếng Nhật'
+-- GO
+
+-- SELECT * FROM KhoaHoc
+-- SELECT * FROM BaiHoc
+-- SELECT * FROM Truong
+
