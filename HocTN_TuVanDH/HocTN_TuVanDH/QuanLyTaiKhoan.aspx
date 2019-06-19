@@ -3,7 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphQuanLyTaiKhoan" runat="server">
     <%--tên đăng nhập--%>
     <div class="form-group">
-        <label for="txbUsername" class="font-weight-bold">
+        <label for="txbUsername" class="font-weight-bold mt-5">
             Họ tên:
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
                                 runat="server"
@@ -93,7 +93,7 @@
     </div>
     <%--ENDS NHẬP LẠI MẬT KHẨU--%>
     <div class="float-right">
-        <asp:Button ID="btnSignIn" runat="server" Text="Đăng ký" CssClass="btn btn-success px-4" OnClick="btnSignIn_Click" />
+        <asp:Button ID="btnSignIn" runat="server" Text="Đăng ký" CssClass="btn btn-success px-4" />
         <asp:Button ID="btnCancel" runat="server" Text="Hủy" CssClass="btn btn-danger" />
     </div>
 </asp:Content>
